@@ -1,18 +1,31 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase principal de gestion del hospital
+ *  @version 1.0
+ *  @author John
+ */
 public class gestionHospital {
     public static void main(String[] args) {
+        /**
+         * Creacion de objetos de tipo medico
+         */
         Medico cardiologo = new Medico("Julian alcazares","10547474",36,"Masculino","Cardiologo","3434214");
         Medico pediatra = new Medico("Daniela roman","1035366",29,"Femenino","pediatra","564536");
         Medico oncologo = new Medico("Juan pablo gomez","10934646",43,"Masculino","oncologo","784564");
         Medico neurocirugano = new Medico("Daniel lopez","10643322",39,"Masculino","neurocirugano","835353");
 
+        /**
+         * Creacion de medicos ciruganos
+         */
         MedicoCirugano neurocirujano1 = new MedicoCirugano("Daniel Lopez", "10643322", 39, "Masculino", "Neurocirugano", "835353", 1);
         MedicoCirugano neurocirujano2 = new MedicoCirugano("Maria Garcia", "20456789", 45, "Femenino", "Neurocirugano", "924464", 2);
         MedicoCirugano neurocirujano3 = new MedicoCirugano("Carlos Ruiz", "30567891", 52, "Masculino", "Neurocirugano", "746242", 3);
         MedicoCirugano neurocirujano4 = new MedicoCirugano("Ana Martinez", "40678912", 37, "Femenino", "Neurocirugano", "658131", 4);
-
+        /**
+         * Presentacion de medicos
+         */
         System.out.println("Presentacion de medicos\n");
 
         cardiologo.presentacion();
@@ -20,6 +33,9 @@ public class gestionHospital {
         oncologo.presentacion();
         neurocirugano.presentacion();
 
+        /**
+         * Creacion de objetos de tipo paciente
+         */
         Paciente p1 = new Paciente("Juan Gómez", "1001", 35, "M", 101, "Sanitas", 200.0, "Infarto");
         Paciente p2 = new Paciente("Lucía Lara", "1002", 28, "F", 102, "Sura", 30.0, "Fiebre");
         Paciente p3 = new Paciente("Carlos Ruiz", "1003", 45, "M", 103, "Compensar", 150.0, "Dolor");
@@ -33,6 +49,9 @@ public class gestionHospital {
         Paciente p11 = new Paciente("Ricardo León", "1011", 71, "M", 111, "Compensar", 45.0, "Fiebre");
         Paciente p12 = new Paciente("Camila Vargas", "1012", 30, "F", 112, "Nueva EPS", 90.0, "Dolor");
 
+        /**
+         * crear la lista de pacientes y empezar a añadirlos
+         */
         List<Paciente> pacientes = new ArrayList<>();
         pacientes.add(p1);
         pacientes.add(p2);
@@ -49,7 +68,9 @@ public class gestionHospital {
 
         System.out.println("\nPresentacion de pacientes\n");
 
-
+        /**
+         * recorrer la lista de pacientes y presentarlos
+         */
         for(Paciente paciente:pacientes){
             paciente.presentacion();
         }
@@ -87,14 +108,28 @@ public class gestionHospital {
         oncologo.asignarPrioridad();
         neurocirugano.asignarPrioridad();
 
+        /**
+         * Verificar presupuestos
+         */
         p1.verificarPresupuesto(50);
         p2.verificarPresupuesto(50);
         p3.verificarPresupuesto(100);
         p4.verificarPresupuesto(200);
 
+        /**
+         * Validar quirofanos
+         */
         neurocirujano1.validarQuirofano(true);
+        neurocirujano2.validarQuirofano(false);
 
+        /**
+         * Creacion objeto gestion
+         */
         Atencion gestion = new Atencion();
+
+        /**
+         * Procesar el ingreso a los pacientes
+         */
         gestion.procesarIngreso(p1);
         gestion.procesarIngreso(p2);
     }
