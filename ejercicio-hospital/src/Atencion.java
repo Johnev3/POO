@@ -1,6 +1,19 @@
+/**
+ * Clase Atencion
+ */
 public class Atencion {
+    /**
+     *
+     * @param paciente objeto de tipo paciente
+     */
     public void procesarIngreso(Paciente paciente) {
+        /**
+         * variable tipo cadena que almacena el pabellon
+         */
         String pabellon;
+        /**
+         * variable cadena que almacena la eps del paciente
+         */
         String eps = paciente.getEps();
 
         switch (eps){
