@@ -83,8 +83,8 @@ public class Medico extends Persona{
      * metodo abstracto presentacion
      */
     @Override
-    void presentacion() {
-        System.out.println("[Medico] Dr. "+nombre+" - Especialidad: "+especialidad);
+    String presentacion() {
+        return "[Medico] Dr. "+nombre+" - Especialidad: "+especialidad;
     }
 
 

@@ -70,7 +70,7 @@ public class Paciente extends Persona{
      * Metodo abstracto presentacion
      */
     @Override
-    void presentacion() {
-        System.out.println("[Paciente] "+nombre+" - EPS: "+eps+" - Sintoma: "+sintoma);
+    String presentacion() {
+        return "[Paciente] "+nombre+" - EPS: "+eps+" - Sintoma: "+sintoma;
     }
 }

@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="InterfazHospital">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="842" height="551"/>
+    </constraints>
+    <properties>
+      <background color="-1"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <tabbedpane id="eff90" binding="tabbedPane1" default-binding="true">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="9f796" binding="medico" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Medicos"/>
+            </constraints>
+            <properties>
+              <background color="-15787726"/>
+              <foreground color="-15787726"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="c7e7b" binding="panelMedicos" layout-manager="CardLayout" hgap="0" vgap="0">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="c1231" binding="panelBotones" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <card name="Card1"/>
+                    </constraints>
+                    <properties>
+                      <background color="-15787726"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="a6942" class="javax.swing.JButton" binding="agregarMedicoPanel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="400" height="65"/>
+                            <maximum-size width="400" height="65"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-4944836"/>
+                          <focusPainted value="false"/>
+                          <focusable value="false"/>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-16777216"/>
+                          <margin top="0" left="0" bottom="0" right="0"/>
+                          <opaque value="true"/>
+                          <requestFocusEnabled value="true"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Agregar Medicos"/>
+                        </properties>
+                      </component>
+                      <component id="5a9f1" class="javax.swing.JButton" binding="consultarMedicosPanel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="400" height="65"/>
+                            <maximum-size width="400" height="65"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-4944836"/>
+                          <focusPainted value="false"/>
+                          <focusable value="false"/>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-16777216"/>
+                          <opaque value="true"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Consultar Medicos"/>
+                        </properties>
+                      </component>
+                      <component id="c2472" class="javax.swing.JButton" binding="agregarPacientePanel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="400" height="65"/>
+                            <maximum-size width="400" height="65"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-4944836"/>
+                          <focusable value="false"/>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-16777216"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Agregar Paciente"/>
+                        </properties>
+                      </component>
+                      <component id="427aa" class="javax.swing.JButton" binding="revisarPacientesPanel">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="400" height="65"/>
+                            <maximum-size width="400" height="65"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-4944836"/>
+                          <focusPainted value="false"/>
+                          <focusable value="false"/>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-16777216"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Revisar pacientes"/>
+                        </properties>
+                      </component>
+                      <component id="f2216" class="javax.swing.JButton" binding="asignarPrioridadPanel">
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="400" height="65"/>
+                            <maximum-size width="400" height="65"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-4944836"/>
+                          <focusable value="false"/>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-16777216"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Asignar prioridad"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="a4d2a" binding="panelListaMedicos" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <card name="Card2"/>
+                    </constraints>
+                    <properties>
+                      <background color="-15787726"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="3b69" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-12500154"/>
+                          <foreground color="-1"/>
+                          <horizontalAlignment value="0"/>
+                          <horizontalTextPosition value="0"/>
+                          <text value="Lista de medicos disponibles"/>
+                        </properties>
+                      </component>
+                      <scrollpane id="8d1ff">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="1537b" class="javax.swing.JList" binding="listaMedicos">
+                            <constraints/>
+                            <properties>
+                              <background color="-5852181"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </scrollpane>
+                      <component id="f0c1f" class="javax.swing.JButton" binding="volverPanelConsultaMedicos">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="500" height="45"/>
+                            <maximum-size width="500" height="45"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16777216"/>
+                          <foreground color="-1"/>
+                          <margin top="0" left="0" bottom="0" right="0"/>
+                          <text value="Volver"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="239d3" binding="panelFormularioMedico" layout-manager="GridLayoutManager" row-count="8" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <card name="Card3"/>
+                    </constraints>
+                    <properties>
+                      <background color="-15787726"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="29d2f" class="javax.swing.JTextField" binding="campoNombreMedico">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="500" height="40"/>
+                            <maximum-size width="500" height="40"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-5852181"/>
+                          <foreground color="-16777216"/>
+                        </properties>
+                      </component>
+                      <component id="b7559" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Consolas" size="14"/>
+                          <foreground color="-657931"/>
+                          <text value="Nombre"/>
+                        </properties>
+                      </component>
+                      <component id="40554" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Consolas" size="14"/>
+                          <foreground color="-657931"/>
+                          <text value="Dni (Documento)"/>
+                        </properties>
+                      </component>
+                      <component id="5eb23" class="javax.swing.JTextField" binding="campoDNImedico">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="500" height="40"/>
+                            <maximum-size width="500" height="40"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-5852181"/>
+                          <foreground color="-16777216"/>
+                        </properties>
+                      </component>
+                      <component id="481aa" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Consolas" size="14"/>
+                          <foreground color="-657931"/>
+                          <text value="Edad"/>
+                        </properties>
+                      </component>
+                      <component id="f865c" class="javax.swing.JTextField" binding="campoEdadMedico">
+                        <constraints>
+                          <grid row="2" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="500" height="40"/>
+                            <maximum-size width="500" height="40"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-5852181"/>
+                          <foreground color="-16777216"/>
+                        </properties>
+                      </component>
+                      <component id="e7048" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Consolas" size="14"/>
+                          <foreground color="-657931"/>
+                          <text value="Genero"/>
+                        </properties>
+                      </component>
+                      <component id="c1863" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Consolas" size="14"/>
+                          <foreground color="-657931"/>
+                          <text value="Especialidad"/>
+                        </properties>
+                      </component>
+                      <component id="ee304" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Consolas" size="14"/>
+                          <foreground color="-657931"/>
+                          <text value="Numero de registro"/>
+                        </properties>
+                      </component>
+                      <component id="8c4f3" class="javax.swing.JTextField" binding="campoNumeroRegistroMedico">
+                        <constraints>
+                          <grid row="5" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="500" height="40"/>
+                            <maximum-size width="500" height="40"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-5852181"/>
+                          <foreground color="-16777216"/>
+                        </properties>
+                      </component>
+                      <component id="9383f" class="javax.swing.JButton" binding="añadirMedicoButton" default-binding="true">
+                        <constraints>
+                          <grid row="7" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="280" height="50"/>
+                            <maximum-size width="280" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16777216"/>
+                          <focusPainted value="false"/>
+                          <focusable value="false"/>
+                          <foreground color="-1"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Añadir Medico"/>
+                        </properties>
+                      </component>
+                      <vspacer id="ee71a">
+                        <constraints>
+                          <grid row="0" column="0" row-span="6" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                      </vspacer>
+                      <component id="1985a" class="javax.swing.JButton" binding="volverPanelMedicos">
+                        <constraints>
+                          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="280" height="50"/>
+                            <maximum-size width="280" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16777216"/>
+                          <focusPainted value="false"/>
+                          <focusable value="false"/>
+                          <foreground color="-1"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Volver"/>
+                        </properties>
+                      </component>
+                      <component id="22e68" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Consolas" size="14"/>
+                          <foreground color="-657931"/>
+                          <text value="Numero quirofano (cirugano)"/>
+                        </properties>
+                      </component>
+                      <component id="6e537" class="javax.swing.JTextField" binding="campoNumeroQuirofano">
+                        <constraints>
+                          <grid row="6" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="500" height="40"/>
+                            <maximum-size width="500" height="40"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-5852181"/>
+                          <foreground color="-16777216"/>
+                        </properties>
+                      </component>
+                      <component id="39edc" class="javax.swing.JButton" binding="añadirCiruganoButton" default-binding="true">
+                        <constraints>
+                          <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="280" height="50"/>
+                            <maximum-size width="280" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16777216"/>
+                          <foreground color="-1"/>
+                          <text value="Añadir cirugano"/>
+                        </properties>
+                      </component>
+                      <component id="b08c5" class="javax.swing.JComboBox" binding="listaGeneroMedico">
+                        <constraints>
+                          <grid row="3" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="1" use-parent-layout="false">
+                            <preferred-size width="500" height="40"/>
+                            <maximum-size width="500" height="40"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-5852181"/>
+                          <foreground color="-16777216"/>
+                        </properties>
+                      </component>
+                      <component id="3c2e7" class="javax.swing.JComboBox" binding="listaEspecialidades">
+                        <constraints>
+                          <grid row="4" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="500" height="40"/>
+                            <maximum-size width="500" height="40"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-5852181"/>
+                          <foreground color="-16777216"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="fdba4" binding="panelAgregarPacientesMedico" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <card name="Card4"/>
+                    </constraints>
+                    <properties>
+                      <background color="-15787726"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="74f00" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <foreground color="-1"/>
+                          <text value="Agregar un paciente a un medico"/>
+                        </properties>
+                      </component>
+                      <vspacer id="9bd96">
+                        <constraints>
+                          <grid row="1" column="1" row-span="3" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                            <preferred-size width="400" height="40"/>
+                            <maximum-size width="400" height="40"/>
+                          </grid>
+                        </constraints>
+                      </vspacer>
+                      <component id="40e36" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <foreground color="-1"/>
+                          <text value="Paciente"/>
+                        </properties>
+                      </component>
+                      <component id="d7961" class="javax.swing.JComboBox" binding="listaNombresPacientes">
+                        <constraints>
+                          <grid row="2" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="400" height="40"/>
+                            <maximum-size width="400" height="40"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-5852181"/>
+                        </properties>
+                      </component>
+                      <component id="f6019" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <foreground color="-1"/>
+                          <text value="Medico"/>
+                        </properties>
+                      </component>
+                      <component id="f45cf" class="javax.swing.JComboBox" binding="listaNombresMedicos">
+                        <constraints>
+                          <grid row="2" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="400" height="40"/>
+                            <maximum-size width="400" height="40"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-5852181"/>
+                        </properties>
+                      </component>
+                      <component id="bc04c" class="javax.swing.JButton" binding="agregarPacienteButton" default-binding="true">
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="400" height="50"/>
+                            <maximum-size width="400" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16777216"/>
+                          <focusPainted value="false"/>
+                          <focusable value="false"/>
+                          <foreground color="-1"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Agregar Paciente"/>
+                        </properties>
+                      </component>
+                      <component id="c7bf9" class="javax.swing.JButton" binding="volverAgregarPacienteMedico">
+                        <constraints>
+                          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="400" height="50"/>
+                            <maximum-size width="400" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-16777216"/>
+                          <focusPainted value="false"/>
+                          <focusable value="false"/>
+                          <foreground color="-1"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Volver"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="fbba9" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Pacientes"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <grid id="a5b7d" binding="panelPacientes" layout-manager="CardLayout" hgap="0" vgap="0">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="f752b" binding="panelBotonesPacientes" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <card name="Card1"/>
+                    </constraints>
+                    <properties>
+                      <background color="-15787726"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="e6fe1" class="javax.swing.JButton" binding="agregarPaciente">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="500" height="65"/>
+                            <maximum-size width="500" height="65"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-4944836"/>
+                          <focusable value="false"/>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-16777216"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Agregar Paciente"/>
+                        </properties>
+                      </component>
+                      <component id="e0fda" class="javax.swing.JButton" binding="mostrarPacientesButton" default-binding="true">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="500" height="65"/>
+                            <maximum-size width="500" height="65"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-4944836"/>
+                          <focusable value="false"/>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-16777216"/>
+                          <rolloverEnabled value="false"/>
+                          <text value="Mostrar Pacientes"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="5274a" binding="panelFormularioPacientes" layout-manager="GridLayoutManager" row-count="8" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <card name="Card2"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="68044" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Nombre"/>
+                        </properties>
+                      </component>
+                      <component id="8e158" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="9161c" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Documento Paciente"/>
+                        </properties>
+                      </component>
+                      <component id="8c549" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="6318e" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Edad"/>
+                        </properties>
+                      </component>
+                      <component id="ccb0b" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+                        <constraints>
+                          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="646f4" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Genero"/>
+                        </properties>
+                      </component>
+                      <component id="53bab" class="javax.swing.JComboBox" binding="listaGeneroPaciente">
+                        <constraints>
+                          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="fb492" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Numero De Historial"/>
+                        </properties>
+                      </component>
+                      <component id="baf5c" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+                        <constraints>
+                          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="c5827" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Eps"/>
+                        </properties>
+                      </component>
+                      <component id="4f81" class="javax.swing.JComboBox" binding="listaEps">
+                        <constraints>
+                          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="44526" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Saldo Disponible"/>
+                        </properties>
+                      </component>
+                      <component id="171d2" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+                        <constraints>
+                          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties/>
+                      </component>
+                      <component id="2ba8d" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Sintoma"/>
+                        </properties>
+                      </component>
+                      <component id="26ccf" class="javax.swing.JComboBox" binding="listaSintomas">
+                        <constraints>
+                          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="914cc" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Cirujias"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="394e3" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Atencion"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children/>
+          </grid>
+        </children>
+      </tabbedpane>
+    </children>
+  </grid>
+</form>

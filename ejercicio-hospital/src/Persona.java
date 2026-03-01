@@ -33,5 +33,5 @@ public abstract class Persona {
     /**
      * Metodo abstracto presentacion
      */
-    abstract void presentacion();
+    abstract String presentacion();
 }
