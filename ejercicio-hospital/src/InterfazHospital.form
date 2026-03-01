@@ -589,7 +589,7 @@
                           <text value="Nombre"/>
                         </properties>
                       </component>
-                      <component id="8e158" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+                      <component id="8e158" class="javax.swing.JTextField" binding="campoNombrePaciente">
                         <constraints>
                           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="500" height="40"/>
@@ -608,7 +608,7 @@
                           <text value="Documento Paciente"/>
                         </properties>
                       </component>
-                      <component id="8c549" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+                      <component id="8c549" class="javax.swing.JTextField" binding="campoDNIPaciente">
                         <constraints>
                           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="500" height="40"/>
@@ -627,7 +627,7 @@
                           <text value="Edad"/>
                         </properties>
                       </component>
-                      <component id="ccb0b" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+                      <component id="ccb0b" class="javax.swing.JTextField" binding="campoEdadPaciente">
                         <constraints>
                           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="500" height="40"/>
@@ -665,7 +665,7 @@
                           <text value="Numero De Historial"/>
                         </properties>
                       </component>
-                      <component id="baf5c" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+                      <component id="baf5c" class="javax.swing.JTextField" binding="campoNumeroHistorial">
                         <constraints>
                           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="500" height="40"/>
@@ -703,7 +703,7 @@
                           <text value="Saldo Disponible"/>
                         </properties>
                       </component>
-                      <component id="171d2" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+                      <component id="171d2" class="javax.swing.JTextField" binding="campoSaldo">
                         <constraints>
                           <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="500" height="40"/>
@@ -741,7 +741,7 @@
                         </properties>
                         <border type="none"/>
                         <children>
-                          <component id="78851" class="javax.swing.JButton" binding="agregarButton" default-binding="true">
+                          <component id="78851" class="javax.swing.JButton" binding="agregarPacientes">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                                 <preferred-size width="400" height="50"/>
@@ -756,7 +756,7 @@
                               <text value="Agregar"/>
                             </properties>
                           </component>
-                          <component id="6bcd3" class="javax.swing.JButton" binding="volverButton" default-binding="true">
+                          <component id="6bcd3" class="javax.swing.JButton" binding="volverPanelPacientes">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                                 <preferred-size width="400" height="50"/>
