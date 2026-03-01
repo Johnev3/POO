@@ -123,6 +123,8 @@ public class InterfazHospital {
          * Agregar opciones a lista de sintomas
          */
         listaSintomas.addItem("Fiebre");
+        listaSintomas.addItem("Infarto");
+        listaSintomas.addItem("Dolor");
         /**
          * Boton agregar medico
          *
@@ -544,43 +546,68 @@ public class InterfazHospital {
         panelBotonesPacientes.add(mostrarPacientesButton, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(500, 65), new Dimension(500, 65), 0, false));
         panelFormularioPacientes = new JPanel();
         panelFormularioPacientes.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(8, 2, new Insets(0, 0, 0, 0), -1, -1));
+        panelFormularioPacientes.setBackground(new Color(-15787726));
         panelPacientes.add(panelFormularioPacientes, "Card2");
         final JLabel label12 = new JLabel();
+        Font label12Font = this.$$$getFont$$$("Consolas", -1, 20, label12.getFont());
+        if (label12Font != null) label12.setFont(label12Font);
+        label12.setForeground(new Color(-1));
         label12.setText("Nombre");
         panelFormularioPacientes.add(label12, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         textField1 = new JTextField();
         panelFormularioPacientes.add(textField1, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label13 = new JLabel();
+        Font label13Font = this.$$$getFont$$$("Consolas", -1, 20, label13.getFont());
+        if (label13Font != null) label13.setFont(label13Font);
+        label13.setForeground(new Color(-1));
         label13.setText("Documento Paciente");
         panelFormularioPacientes.add(label13, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         textField2 = new JTextField();
         panelFormularioPacientes.add(textField2, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label14 = new JLabel();
+        Font label14Font = this.$$$getFont$$$("Consolas", -1, 20, label14.getFont());
+        if (label14Font != null) label14.setFont(label14Font);
+        label14.setForeground(new Color(-1));
         label14.setText("Edad");
         panelFormularioPacientes.add(label14, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         textField3 = new JTextField();
         panelFormularioPacientes.add(textField3, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label15 = new JLabel();
+        Font label15Font = this.$$$getFont$$$("Consolas", -1, 20, label15.getFont());
+        if (label15Font != null) label15.setFont(label15Font);
+        label15.setForeground(new Color(-1));
         label15.setText("Genero");
         panelFormularioPacientes.add(label15, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         listaGeneroPaciente = new JComboBox();
         panelFormularioPacientes.add(listaGeneroPaciente, new com.intellij.uiDesigner.core.GridConstraints(3, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label16 = new JLabel();
+        Font label16Font = this.$$$getFont$$$("Consolas", -1, 20, label16.getFont());
+        if (label16Font != null) label16.setFont(label16Font);
+        label16.setForeground(new Color(-1));
         label16.setText("Numero De Historial");
         panelFormularioPacientes.add(label16, new com.intellij.uiDesigner.core.GridConstraints(4, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         textField4 = new JTextField();
         panelFormularioPacientes.add(textField4, new com.intellij.uiDesigner.core.GridConstraints(4, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label17 = new JLabel();
+        Font label17Font = this.$$$getFont$$$("Consolas", -1, 20, label17.getFont());
+        if (label17Font != null) label17.setFont(label17Font);
+        label17.setForeground(new Color(-1));
         label17.setText("Eps");
         panelFormularioPacientes.add(label17, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         listaEps = new JComboBox();
         panelFormularioPacientes.add(listaEps, new com.intellij.uiDesigner.core.GridConstraints(5, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label18 = new JLabel();
+        Font label18Font = this.$$$getFont$$$("Consolas", -1, 20, label18.getFont());
+        if (label18Font != null) label18.setFont(label18Font);
+        label18.setForeground(new Color(-1));
         label18.setText("Saldo Disponible");
         panelFormularioPacientes.add(label18, new com.intellij.uiDesigner.core.GridConstraints(6, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         textField5 = new JTextField();
         panelFormularioPacientes.add(textField5, new com.intellij.uiDesigner.core.GridConstraints(6, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label19 = new JLabel();
+        Font label19Font = this.$$$getFont$$$("Consolas", -1, 20, label19.getFont());
+        if (label19Font != null) label19.setFont(label19Font);
+        label19.setForeground(new Color(-1));
         label19.setText("Sintoma");
         panelFormularioPacientes.add(label19, new com.intellij.uiDesigner.core.GridConstraints(7, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         listaSintomas = new JComboBox();

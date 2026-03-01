@@ -574,7 +574,9 @@
                     <constraints>
                       <card name="Card2"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-15787726"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="68044" class="javax.swing.JLabel">
@@ -582,6 +584,8 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-1"/>
                           <text value="Nombre"/>
                         </properties>
                       </component>
@@ -598,6 +602,8 @@
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-1"/>
                           <text value="Documento Paciente"/>
                         </properties>
                       </component>
@@ -614,6 +620,8 @@
                           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-1"/>
                           <text value="Edad"/>
                         </properties>
                       </component>
@@ -630,6 +638,8 @@
                           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-1"/>
                           <text value="Genero"/>
                         </properties>
                       </component>
@@ -644,6 +654,8 @@
                           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-1"/>
                           <text value="Numero De Historial"/>
                         </properties>
                       </component>
@@ -660,6 +672,8 @@
                           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-1"/>
                           <text value="Eps"/>
                         </properties>
                       </component>
@@ -674,6 +688,8 @@
                           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-1"/>
                           <text value="Saldo Disponible"/>
                         </properties>
                       </component>
@@ -690,6 +706,8 @@
                           <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <font name="Consolas" size="20"/>
+                          <foreground color="-1"/>
                           <text value="Sintoma"/>
                         </properties>
                       </component>
