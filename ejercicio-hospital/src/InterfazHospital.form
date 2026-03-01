@@ -63,8 +63,8 @@
                           <margin top="0" left="0" bottom="0" right="0"/>
                           <opaque value="true"/>
                           <requestFocusEnabled value="true"/>
-                          <rolloverEnabled value="false"/>
-                          <text value="Agregar Medicos"/>
+                          <rolloverEnabled value="true"/>
+                          <text value="pene"/>
                         </properties>
                       </component>
                       <component id="5a9f1" class="javax.swing.JButton" binding="consultarMedicosPanel">
@@ -81,7 +81,7 @@
                           <font name="Consolas" size="20"/>
                           <foreground color="-16777216"/>
                           <opaque value="true"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <text value="Consultar Medicos"/>
                         </properties>
                       </component>
@@ -97,7 +97,7 @@
                           <focusable value="false"/>
                           <font name="Consolas" size="20"/>
                           <foreground color="-16777216"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <text value="Agregar Paciente"/>
                         </properties>
                       </component>
@@ -114,7 +114,7 @@
                           <focusable value="false"/>
                           <font name="Consolas" size="20"/>
                           <foreground color="-16777216"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <text value="Revisar pacientes"/>
                         </properties>
                       </component>
@@ -130,7 +130,7 @@
                           <focusable value="false"/>
                           <font name="Consolas" size="20"/>
                           <foreground color="-16777216"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <text value="Asignar prioridad"/>
                         </properties>
                       </component>
@@ -319,7 +319,7 @@
                           <focusPainted value="false"/>
                           <focusable value="false"/>
                           <foreground color="-1"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <text value="Añadir Medico"/>
                         </properties>
                       </component>
@@ -340,7 +340,7 @@
                           <focusPainted value="false"/>
                           <focusable value="false"/>
                           <foreground color="-1"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <text value="Volver"/>
                         </properties>
                       </component>
@@ -484,7 +484,7 @@
                           <focusPainted value="false"/>
                           <focusable value="false"/>
                           <foreground color="-1"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <text value="Agregar Paciente"/>
                         </properties>
                       </component>
@@ -500,7 +500,7 @@
                           <focusPainted value="false"/>
                           <focusable value="false"/>
                           <foreground color="-1"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <text value="Volver"/>
                         </properties>
                       </component>
@@ -547,7 +547,7 @@
                           <focusable value="false"/>
                           <font name="Consolas" size="20"/>
                           <foreground color="-16777216"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <text value="Agregar Paciente"/>
                         </properties>
                       </component>
@@ -563,7 +563,7 @@
                           <focusable value="false"/>
                           <font name="Consolas" size="20"/>
                           <foreground color="-16777216"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <text value="Mostrar Pacientes"/>
                         </properties>
                       </component>
