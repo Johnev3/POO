@@ -64,7 +64,7 @@
                           <opaque value="true"/>
                           <requestFocusEnabled value="true"/>
                           <rolloverEnabled value="false"/>
-                          <text value="Agregar Medicos"/>
+                          <text value="pene"/>
                         </properties>
                       </component>
                       <component id="5a9f1" class="javax.swing.JButton" binding="consultarMedicosPanel">
