@@ -6,6 +6,12 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Locale;
 
+/**
+ * Interfaz grafica
+ *
+ * @version 3.3
+ * @author John Ever - Jhoem mathias
+ */
 public class InterfazHospital {
     /**
      * Componentes
