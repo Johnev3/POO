@@ -174,14 +174,14 @@ public class InterfazHospital {
         });
 
         agregarPacientes.addActionListener(e->{
+            boolean datosValidos=true;
             String nombre = campoNombrePaciente.getText();
-            int documentoPaciente = 0;
-            try {
-                documentoPaciente = Integer.parseInt(campoDNIPaciente.getText());
-
-            }catch (NumberFormatException error){
-                JOptionPane.showMessageDialog(null,"Ingrese solo numeros");
+            String documentoPaciente = campoDNImedico.getText();
+            if (documentoPaciente.length() < 7) {
+                JOptionPane.showMessageDialog(null, "La longitud del documento debe ser mayor a 7 digitos");
+                datosValidos = false;
             }
+
         });
 
     }
