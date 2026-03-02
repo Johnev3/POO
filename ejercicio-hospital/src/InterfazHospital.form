@@ -37,7 +37,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <grid id="c1231" binding="panelBotones" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="c1231" binding="panelBotones" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <card name="Card1"/>
@@ -101,26 +101,9 @@
                           <text value="Agregar Paciente"/>
                         </properties>
                       </component>
-                      <component id="427aa" class="javax.swing.JButton" binding="revisarPacientesPanel">
-                        <constraints>
-                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="400" height="65"/>
-                            <maximum-size width="400" height="65"/>
-                          </grid>
-                        </constraints>
-                        <properties>
-                          <background color="-4944836"/>
-                          <focusPainted value="false"/>
-                          <focusable value="false"/>
-                          <font name="Consolas" size="20"/>
-                          <foreground color="-16777216"/>
-                          <rolloverEnabled value="true"/>
-                          <text value="Revisar pacientes"/>
-                        </properties>
-                      </component>
                       <component id="f2216" class="javax.swing.JButton" binding="asignarPrioridadPanel">
                         <constraints>
-                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="400" height="65"/>
                             <maximum-size width="400" height="65"/>
                           </grid>
@@ -976,20 +959,34 @@
             <constraints>
               <tabbedpane title="Atencion"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-15787726"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="4281" class="javax.swing.JComboBox" binding="listaPacientesAtencion">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="500" height="50"/>
+                    <maximum-size width="500" height="50"/>
+                  </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-5852181"/>
+                </properties>
               </component>
               <component id="50a1b" class="javax.swing.JButton" binding="procesarIngresoButton" default-binding="true">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="500" height="50"/>
+                    <maximum-size width="500" height="50"/>
+                  </grid>
                 </constraints>
                 <properties>
+                  <background color="-16777216"/>
+                  <focusable value="false"/>
+                  <foreground color="-1"/>
+                  <rolloverEnabled value="false"/>
                   <text value="Procesar Ingreso"/>
                 </properties>
               </component>
@@ -1000,7 +997,9 @@
             <constraints>
               <tabbedpane title="Pagos"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-15787726"/>
+            </properties>
             <border type="none"/>
             <children>
               <hspacer id="158ef">
@@ -1010,33 +1009,51 @@
               </hspacer>
               <component id="451ad" class="javax.swing.JComboBox" binding="listaPacientesPago">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="500" height="50"/>
+                    <maximum-size width="500" height="50"/>
+                  </grid>
                 </constraints>
                 <properties>
+                  <background color="-5852181"/>
                   <model/>
                 </properties>
               </component>
               <component id="ba3c8" class="javax.swing.JTextField" binding="campoCostoConsulta">
                 <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="500" height="50"/>
+                    <maximum-size width="500" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-5852181"/>
+                </properties>
               </component>
               <component id="8e986" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="500" height="50"/>
+                    <maximum-size width="500" height="50"/>
+                  </grid>
                 </constraints>
                 <properties>
+                  <background color="-5852181"/>
+                  <foreground color="-1"/>
                   <text value="Ingrese el valor"/>
                 </properties>
               </component>
               <component id="24665" class="javax.swing.JButton" binding="verificarPresupuestoButton" default-binding="true">
                 <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="500" height="40"/>
+                    <maximum-size width="500" height="40"/>
+                  </grid>
                 </constraints>
                 <properties>
+                  <background color="-16777216"/>
+                  <focusable value="false"/>
+                  <foreground color="-1"/>
                   <text value="Verificar presupuesto"/>
                 </properties>
               </component>
