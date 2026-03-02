@@ -64,7 +64,7 @@
                           <opaque value="true"/>
                           <requestFocusEnabled value="true"/>
                           <rolloverEnabled value="true"/>
-                          <text value="eee"/>
+                          <text value="Agregar medicos"/>
                         </properties>
                       </component>
                       <component id="5a9f1" class="javax.swing.JButton" binding="consultarMedicosPanel">
