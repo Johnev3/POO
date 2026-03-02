@@ -54,6 +54,7 @@ public class InterfazHospital {
     private JComboBox listaSintomas;
     private JButton agregarPacientes;
     private JButton volverPanelPacientes;
+    private JComboBox comboBox1;
 
     /**
      * estado booleno para verificar si es medico o cirugano
