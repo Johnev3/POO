@@ -63,7 +63,6 @@ public class InterfazHospital {
      * Lista de medicos
      */
     ArrayList<Medico> medicos = new ArrayList<>();
-
     /**
      * Lista de ciruganos
      */
@@ -180,6 +179,29 @@ public class InterfazHospital {
             if (documentoPaciente.length() < 7) {
                 JOptionPane.showMessageDialog(null, "La longitud del documento debe ser mayor a 7 digitos");
                 datosValidos = false;
+            }
+            int edad=0;
+            try{
+                edad = Integer.parseInt(campoEdadPaciente.getText());
+                if(edad<18){
+                    JOptionPane.showMessageDialog(null,"La edad debe ser mayor a 18");
+                    datosValidos = false;
+                }
+            }catch (NumberFormatException error){
+                JOptionPane.showMessageDialog(null,"Ingrese numeros en vez de letras");
+            }
+            String genero = (String) listaGeneroPaciente.getSelectedItem();
+            int numeroHistorial = 0;
+            try{
+                numeroHistorial = Integer.parseInt(campoNumeroHistorial.getText());
+            }catch (NumberFormatException error){
+                JOptionPane.showMessageDialog(null,"Ingrese numeros en vez de letras");
+            }
+            String eps = (String) listaEps.getSelectedItem();
+            double saldoDisponible = 0;
+            try{
+                saldoDisponible = Double.parseDouble(campoSaldo.getText());
+                if(saldo)
             }
 
         });
