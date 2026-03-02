@@ -30,11 +30,11 @@ public class MedicoCirugano extends Medico implements ICirugano{
      * @param estado estado del quirofano
      */
     @Override
-    public void validarQuirofano(boolean estado) {
+    public String validarQuirofano(boolean estado) {
         if(estado){
-            System.out.println("El cirujano "+nombre+" esta operando en en quirofano "+numeroQuirofano);
+            return "El cirujano "+nombre+" esta operando en en quirofano "+numeroQuirofano;
         }else{
-            System.out.println("El quirofano "+numeroQuirofano+" no esta listo");
+            return "El quirofano "+numeroQuirofano+" no esta listo";
         }
     }
 }

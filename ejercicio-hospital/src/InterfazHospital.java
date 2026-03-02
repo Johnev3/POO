@@ -54,7 +54,7 @@ public class InterfazHospital {
     private JComboBox listaSintomas;
     private JButton agregarPacientes;
     private JButton volverPanelPacientes;
-    private JComboBox comboBox1;
+    private JComboBox listaPacientesPago;
     private JPanel panelListaPacientes;
     private JButton volverListaPacientes;
     private JList listaPanelPacientes;
@@ -63,6 +63,13 @@ public class InterfazHospital {
     private JList listaPrioridades;
     private JButton asignarPrioridadesButton;
     private JButton volverPanelPrioridades;
+    private JComboBox listaCiruganos;
+    private JButton consultarQuirofanoButton;
+    private JComboBox estadoQuirofano;
+    private JComboBox listaPacientesAtencion;
+    private JButton procesarIngresoButton;
+    private JTextField campoCostoConsulta;
+    private JButton verificarPresupuestoButton;
 
     /**
      * estado booleno para verificar si es medico o cirugano
@@ -143,6 +150,11 @@ public class InterfazHospital {
         listaSintomas.addItem("Infarto");
         listaSintomas.addItem("Dolor");
         /**
+         * lista estado quirofano
+         */
+        estadoQuirofano.addItem("Libre");
+        estadoQuirofano.addItem("Ocupado");
+        /**
          * Boton agregar medico
          *
          * muestra el panel que contiene el formulario para registrar al medico
@@ -161,6 +173,7 @@ public class InterfazHospital {
         volverPanelMedicos.addActionListener(volverMenuMedicos);
         volverPanelConsultaMedicos.addActionListener(volverMenuMedicos);
         volverAgregarPacienteMedico.addActionListener(volverMenuMedicos);
+        volverPanelPrioridades.addActionListener(volverMenuMedicos);
         /**
          * Evento volver a menu pacientes
          */
@@ -232,6 +245,8 @@ public class InterfazHospital {
                 Paciente paciente = new Paciente(nombre, documentoPaciente, edad, genero, numeroHistorial, eps, saldoDisponible, sintoma);
                 pacientes.add(paciente);
                 listaNombresPacientesAsignacion.addItem(nombre);
+                listaPacientesAtencion.addItem(nombre);
+                listaPacientesPago.addItem(nombre);
                 JOptionPane.showMessageDialog(null, "Se ha ingresado el paciente " + nombre + " de forma correcta");
                 limpiarCamposPaciente();
             }
@@ -249,9 +264,10 @@ public class InterfazHospital {
             if (paciente != null && medico != null) {
                 for (Medico medicoLista : medicos) {
                     for (Paciente pacienteLista : pacientes) {
-                        if (pacienteLista.nombre == paciente && medicoLista.nombre == medico) {
+                        if (pacienteLista.nombre.equals(paciente) && medico.contains(medicoLista.nombre)) {
                             medicoLista.asignarPaciente(pacienteLista);
                             listaNombresPacientesAsignacion.removeItem(paciente);
+                            JOptionPane.showMessageDialog(null, "Se ha asignado de forma correcta");
                         }
                     }
                 }
@@ -262,6 +278,64 @@ public class InterfazHospital {
 
         asignarPrioridadPanel.addActionListener(e -> {
             layoutPanelMedicos.show(panelMedicos, "panelListaPrioridades");
+        });
+
+        asignarPrioridadesButton.addActionListener(e -> {
+            String nombreMedico = (String) listaMedicosPanelPrioridades.getSelectedItem();
+            if (nombreMedico != null) {
+                DefaultListModel<String> lista = new DefaultListModel<>();
+                for (Medico medico : medicos) {
+                    if (medico.nombre == nombreMedico) {
+                        medico.asignarPrioridad();
+                        ;
+                        lista.addElement("Prioridad asignada");
+                        listaPrioridades.setModel(lista);
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No ingrese valores vacios");
+            }
+        });
+
+        consultarQuirofanoButton.addActionListener(e -> {
+            String estado = (String) estadoQuirofano.getSelectedItem();
+            boolean estadoQuirofano;
+            if (estado.equals("Libre")) {
+                estadoQuirofano = true;
+            } else {
+                estadoQuirofano = false;
+            }
+            String nombreCirugano = (String) listaCiruganos.getSelectedItem();
+            for (MedicoCirugano cirugano : ciruganos) {
+                if (cirugano.nombre.equals(nombreCirugano)) {
+                    JOptionPane.showMessageDialog(null, cirugano.validarQuirofano(estadoQuirofano));
+                }
+            }
+        });
+
+        procesarIngresoButton.addActionListener(e -> {
+            String nombrePaciente = (String) listaPacientesAtencion.getSelectedItem();
+            Atencion atencion = new Atencion();
+            for (Paciente paciente : pacientes) {
+                if (paciente.nombre.equals(nombrePaciente)) {
+                    JOptionPane.showMessageDialog(null, atencion.procesarIngreso(paciente));
+                }
+            }
+        });
+
+        verificarPresupuestoButton.addActionListener(e -> {
+            String nombrePaciente = (String) listaPacientesPago.getSelectedItem();
+            int saldo = 0;
+            try {
+                saldo = Integer.parseInt(campoCostoConsulta.getText());
+            } catch (NumberFormatException error) {
+                JOptionPane.showMessageDialog(null, "Ingrese numeros, no letras");
+            }
+            for (Paciente paciente : pacientes) {
+                if (paciente.nombre.equals(nombrePaciente)) {
+                    JOptionPane.showMessageDialog(null, paciente.verificarPresupuesto(saldo));
+                }
+            }
         });
 
     }
@@ -350,14 +424,15 @@ public class InterfazHospital {
                 Medico medico = new Medico(nombreMedico, documentoMedico, edadMedico, generoMedico, especialidad, numeroRegistro);
                 medicos.add(medico);
                 listaNombresMedicosAsignacion.addItem(nombreMedico + " [" + especialidad + "]");
-                listaMedicosPanelPrioridades.addItem(nombreMedico + " [" + especialidad + "]");
+                listaMedicosPanelPrioridades.addItem(nombreMedico);
                 JOptionPane.showMessageDialog(null, "Medico " + nombreMedico + " añadido correctamente");
                 limpiarCamposMedico();
             } else {
                 MedicoCirugano cirugano = new MedicoCirugano(nombreMedico, documentoMedico, edadMedico, generoMedico, especialidad, numeroRegistro, numeroQuirofanoCirugano);
                 ciruganos.add(cirugano);
                 listaNombresMedicosAsignacion.addItem(nombreMedico + "[" + especialidad + "]");
-                listaMedicosPanelPrioridades.addItem(nombreMedico + " [" + especialidad + "]");
+                listaMedicosPanelPrioridades.addItem(nombreMedico);
+                listaCiruganos.addItem(nombreMedico);
                 JOptionPane.showMessageDialog(null, "Cirugano " + nombreMedico + " añadido correctamente");
                 limpiarCamposMedico();
             }
@@ -641,20 +716,32 @@ public class InterfazHospital {
         panelAgregarPacientesMedico.add(volverAgregarPacienteMedico, new com.intellij.uiDesigner.core.GridConstraints(4, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(400, 50), new Dimension(400, 50), 1, false));
         panelListaPrioriades = new JPanel();
         panelListaPrioriades.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(4, 2, new Insets(0, 0, 0, 0), -1, -1));
+        panelListaPrioriades.setBackground(new Color(-15787726));
         panelMedicos.add(panelListaPrioriades, "Card5");
         final JLabel label12 = new JLabel();
+        label12.setForeground(new Color(-1));
         label12.setText("Lista de prioridades");
-        panelListaPrioriades.add(label12, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panelListaPrioriades.add(label12, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         listaMedicosPanelPrioridades = new JComboBox();
+        listaMedicosPanelPrioridades.setBackground(new Color(-5852181));
         panelListaPrioriades.add(listaMedicosPanelPrioridades, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JScrollPane scrollPane2 = new JScrollPane();
         panelListaPrioriades.add(scrollPane2, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         listaPrioridades = new JList();
+        listaPrioridades.setBackground(new Color(-5852181));
         scrollPane2.setViewportView(listaPrioridades);
         asignarPrioridadesButton = new JButton();
+        asignarPrioridadesButton.setBackground(new Color(-16777216));
+        asignarPrioridadesButton.setFocusable(false);
+        asignarPrioridadesButton.setForeground(new Color(-1));
+        asignarPrioridadesButton.setRolloverEnabled(false);
         asignarPrioridadesButton.setText("Asignar prioridades");
         panelListaPrioriades.add(asignarPrioridadesButton, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         volverPanelPrioridades = new JButton();
+        volverPanelPrioridades.setBackground(new Color(-16777216));
+        volverPanelPrioridades.setFocusable(false);
+        volverPanelPrioridades.setForeground(new Color(-1));
+        volverPanelPrioridades.setRolloverEnabled(false);
         volverPanelPrioridades.setText("Volver");
         panelListaPrioriades.add(volverPanelPrioridades, new com.intellij.uiDesigner.core.GridConstraints(3, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JPanel panel2 = new JPanel();
@@ -803,23 +890,45 @@ public class InterfazHospital {
         volverListaPacientes.setText("Volver");
         panelListaPacientes.add(volverListaPacientes, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(500, 50), new Dimension(500, 50), 0, false));
         final JPanel panel4 = new JPanel();
-        panel4.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
+        panel4.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(3, 1, new Insets(0, 0, 0, 0), -1, -1));
+        panel4.setBackground(new Color(-15787726));
         tabbedPane1.addTab("Cirujias", panel4);
+        listaCiruganos = new JComboBox();
+        listaCiruganos.setBackground(new Color(-5852181));
+        panel4.add(listaCiruganos, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(500, 50), new Dimension(500, 50), 0, false));
+        consultarQuirofanoButton = new JButton();
+        consultarQuirofanoButton.setBackground(new Color(-16777216));
+        consultarQuirofanoButton.setForeground(new Color(-1));
+        consultarQuirofanoButton.setText("Consultar quirofano");
+        panel4.add(consultarQuirofanoButton, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(500, 40), new Dimension(500, 40), 0, false));
+        estadoQuirofano = new JComboBox();
+        estadoQuirofano.setBackground(new Color(-5852181));
+        panel4.add(estadoQuirofano, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(500, 50), new Dimension(500, 50), 0, false));
         final JPanel panel5 = new JPanel();
-        panel5.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
+        panel5.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
         tabbedPane1.addTab("Atencion", panel5);
+        listaPacientesAtencion = new JComboBox();
+        panel5.add(listaPacientesAtencion, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        procesarIngresoButton = new JButton();
+        procesarIngresoButton.setText("Procesar Ingreso");
+        panel5.add(procesarIngresoButton, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JPanel panel6 = new JPanel();
-        panel6.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
-        tabbedPane1.addTab("Untitled", panel6);
+        panel6.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(5, 1, new Insets(0, 0, 0, 0), -1, -1));
+        tabbedPane1.addTab("Pagos", panel6);
         final com.intellij.uiDesigner.core.Spacer spacer4 = new com.intellij.uiDesigner.core.Spacer();
-        panel6.add(spacer4, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer5 = new com.intellij.uiDesigner.core.Spacer();
-        panel6.add(spacer5, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        comboBox1 = new JComboBox();
+        panel6.add(spacer4, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        listaPacientesPago = new JComboBox();
         final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
-        defaultComboBoxModel1.addElement("agregar paciente");
-        comboBox1.setModel(defaultComboBoxModel1);
-        panel6.add(comboBox1, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        listaPacientesPago.setModel(defaultComboBoxModel1);
+        panel6.add(listaPacientesPago, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        campoCostoConsulta = new JTextField();
+        panel6.add(campoCostoConsulta, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        final JLabel label22 = new JLabel();
+        label22.setText("Ingrese el valor");
+        panel6.add(label22, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        verificarPresupuestoButton = new JButton();
+        verificarPresupuestoButton.setText("Verificar presupuesto");
+        panel6.add(verificarPresupuestoButton, new com.intellij.uiDesigner.core.GridConstraints(4, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**

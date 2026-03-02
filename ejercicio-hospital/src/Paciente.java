@@ -53,9 +53,9 @@ public class Paciente extends Persona{
      * Metodo para verificar el presupuesto
      * @param costoConsulta costo de la consulta
      */
-    public void verificarPresupuesto(double costoConsulta){
+    public String verificarPresupuesto(double costoConsulta){
         String estado = (costoConsulta<saldoDisponible) ? "Éxito" : "Rechazado (fondos insuficientes";
-        System.out.println("El paciente "+nombre+" intenta pagar $"+costoConsulta+". Saldo actual: $"+saldoDisponible+" -> Resultado: "+estado);
+        return "El paciente "+nombre+" intenta pagar $"+costoConsulta+". Saldo actual: $"+saldoDisponible+" -> Resultado: "+estado;
     }
 
     /**

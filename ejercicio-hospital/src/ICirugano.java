@@ -6,5 +6,5 @@ public interface ICirugano {
      * Contrato validarQuirofano
      * @param estado estado del quirofano
      */
-    void validarQuirofano(boolean estado);
+    String validarQuirofano(boolean estado);
 }

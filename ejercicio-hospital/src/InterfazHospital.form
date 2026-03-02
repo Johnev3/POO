@@ -511,14 +511,17 @@
                     <constraints>
                       <card name="Card5"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-15787726"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="207bc" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <foreground color="-1"/>
                           <text value="Lista de prioridades"/>
                         </properties>
                       </component>
@@ -526,7 +529,9 @@
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-5852181"/>
+                        </properties>
                       </component>
                       <scrollpane id="c718e">
                         <constraints>
@@ -537,7 +542,9 @@
                         <children>
                           <component id="4dbd4" class="javax.swing.JList" binding="listaPrioridades">
                             <constraints/>
-                            <properties/>
+                            <properties>
+                              <background color="-5852181"/>
+                            </properties>
                           </component>
                         </children>
                       </scrollpane>
@@ -546,6 +553,10 @@
                           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-16777216"/>
+                          <focusable value="false"/>
+                          <foreground color="-1"/>
+                          <rolloverEnabled value="false"/>
                           <text value="Asignar prioridades"/>
                         </properties>
                       </component>
@@ -554,6 +565,10 @@
                           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-16777216"/>
+                          <focusable value="false"/>
+                          <foreground color="-1"/>
+                          <rolloverEnabled value="false"/>
                           <text value="Volver"/>
                         </properties>
                       </component>
@@ -909,50 +924,120 @@
               </grid>
             </children>
           </grid>
-          <grid id="914cc" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="914cc" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Cirujias"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-15787726"/>
+            </properties>
             <border type="none"/>
-            <children/>
+            <children>
+              <component id="365ec" class="javax.swing.JComboBox" binding="listaCiruganos">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="500" height="50"/>
+                    <maximum-size width="500" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-5852181"/>
+                </properties>
+              </component>
+              <component id="10af1" class="javax.swing.JButton" binding="consultarQuirofanoButton" default-binding="true">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="500" height="40"/>
+                    <maximum-size width="500" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
+                  <text value="Consultar quirofano"/>
+                </properties>
+              </component>
+              <component id="f063" class="javax.swing.JComboBox" binding="estadoQuirofano">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="500" height="50"/>
+                    <maximum-size width="500" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-5852181"/>
+                </properties>
+              </component>
+            </children>
           </grid>
-          <grid id="394e3" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="394e3" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Atencion"/>
             </constraints>
             <properties/>
             <border type="none"/>
-            <children/>
+            <children>
+              <component id="4281" class="javax.swing.JComboBox" binding="listaPacientesAtencion">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="50a1b" class="javax.swing.JButton" binding="procesarIngresoButton" default-binding="true">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Procesar Ingreso"/>
+                </properties>
+              </component>
+            </children>
           </grid>
-          <grid id="1a183" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="1a183" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <tabbedpane title="Untitled"/>
+              <tabbedpane title="Pagos"/>
             </constraints>
             <properties/>
             <border type="none"/>
             <children>
               <hspacer id="158ef">
                 <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <vspacer id="5477f">
+              <component id="451ad" class="javax.swing.JComboBox" binding="listaPacientesPago">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </vspacer>
-              <component id="451ad" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
-                <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <model>
-                    <item value="agregar paciente"/>
-                  </model>
+                  <model/>
+                </properties>
+              </component>
+              <component id="ba3c8" class="javax.swing.JTextField" binding="campoCostoConsulta">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="8e986" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Ingrese el valor"/>
+                </properties>
+              </component>
+              <component id="24665" class="javax.swing.JButton" binding="verificarPresupuestoButton" default-binding="true">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Verificar presupuesto"/>
                 </properties>
               </component>
             </children>
